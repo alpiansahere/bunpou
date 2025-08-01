@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #000000;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.navbar h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #000000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.nav-links a {
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #414141;
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+/* Kontainer utama */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Kolom pencarian */
+.search-box {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.search-box input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Daftar bunpou */
+.bunpou-list {
+  list-style: none;
+  padding: 0;
+}
+
+.bunpou-item {
+  background-color: #ffffff;
+  border-left: 6px solid #000000;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.bunpou-item strong {
+  font-size: 18px;
+  color: #000000;
+}
+
+.bunpou-item p {
+  margin-top: 5px;
+  color: #333;
+}

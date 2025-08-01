@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日本語</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="bunpou.css" .css">
+</head>
+
+<body>
+    <div class="navbar">
+        <h2>日本語</h2>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">ホーム</a>
+            <a href="#">ことば</a>
+            <a href="#">文法</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Cari bunpou (例: te arimasu, tai, niat)"
+                onkeyup="searchBunpou()" />
+        </div>
+
+        <ul class="bunpou-list" id="bunpouList">
+            <ul class="bunpou-list" id="bunpouList">
+                <!-- 1. KB1 は KB2 です -->
+                <li class="bunpou-item" data-keywords="kb1 wa kb2 desu adalah menyatakan identitas pernyataan positif">
+                    <strong>【Kata Benda 1】 は 【Kata Benda 2】 です</strong>
+                    <p>
+                        <b>Fungsi:</b><br />
+                        Menyatakan bahwa subjek adalah sesuatu (pernyataan positif).
+                    </p>
+                    <p>
+                        <b>Contoh:</b><br />
+                        わたし は がくせい です。<br />
+                        <i>Watashi wa gakusei desu.</i><br />
+                        (Saya adalah seorang pelajar.)
+                    </p>
+                </li>
+
+                <!-- 2. KB1 は KB2 じゃ／では ありません -->
+                <li class="bunpou-item" data-keywords="kb1 wa kb2 ja arimasen dewa arimasen bukan negatif bentuk sopan">
+                    <strong>【Kata Benda 1】 は 【Kata Benda 2】 じゃ／では
+                        ありません</strong>
+                    <p>
+                        <b>Fungsi:</b><br />
+                        Menyatakan bahwa subjek **bukan** sesuatu (pernyataan negatif).
+                    </p>
+                    <p>
+                        <b>Contoh:</b><br />
+                        かれ は いしゃ じゃ ありません。<br />
+                        <i>Kare wa isha ja arimasen.</i><br />
+                        (Dia bukan dokter.)
+                    </p>
+                </li>
+
+                <!-- 3. KB1 は KB2 ですか -->
+                <li class="bunpou-item" data-keywords="kb1 wa kb2 desu ka pertanyaan identitas tanya yes no">
+                    <strong>【Kata Benda 1】 は 【Kata Benda 2】 ですか</strong>
+                    <p>
+                        <b>Fungsi:</b><br />
+                        Menanyakan apakah subjek adalah sesuatu.
+                    </p>
+                    <p>
+                        <b>Contoh:</b><br />
+                        あのひと は せんせい ですか。<br />
+                        <i>Ano hito wa sensei desu ka?</i><br />
+                        (Apakah orang itu guru?)
+                    </p>
+                </li>
+
+                <!-- 4. Kata Benda + も -->
+                <li class="bunpou-item" data-keywords="kb mo juga pun penekanan">
+                    <strong>【Kata Benda】 も</strong>
+                    <p>
+                        <b>Fungsi:</b><br />
+                        Menyatakan "juga", sebagai penekanan bahwa subjek juga melakukan
+                        hal yang sama.
+                    </p>
+                    <p>
+                        <b>Contoh:</b><br />
+                        わたし も がくせい です。<br />
+                        <i>Watashi mo gakusei desu.</i><br />
+                        (Saya juga pelajar.)
+                    </p>
+                </li>
+
+                <!-- 5. KB1 の KB2 -->
+                <li class="bunpou-item" data-keywords="kb1 no kb2 kepemilikan milik relasi">
+                    <strong>【Kata Benda 1】 の 【Kata Benda 2】</strong>
+                    <p>
+                        <b>Fungsi:</b><br />
+                        Menunjukkan kepemilikan atau hubungan antara dua kata benda.
+                    </p>
+                    <p>
+                        <b>Contoh:</b><br />
+                        たなかさん の ほん<br />
+                        <i>Tanaka-san no hon</i><br />
+                        (Bukunya Tanaka / Buku milik Tanaka)
+                    </p>
+                </li>
+
+                <!-- 6. さん (san) -->
+                <li class="bunpou-item" data-keywords="san sapaan kehormatan nama panggilan">
+                    <strong>さん</strong>
+                    <p>
+                        <b>Fungsi:</b><br />
+                        Akhiran kehormatan yang digunakan setelah nama orang untuk
+                        menunjukkan rasa hormat.
+                    </p>
+                    <p>
+                        <b>Contoh:</b><br />
+                        すずきさん は せんせい です。<br />
+                        <i>Suzuki-san wa sensei desu.</i><br />
+                        (Tuan/Ibu Suzuki adalah guru.)
+                    </p>
+                </li>
+            </ul>
+
+            <ul class="bunpou-list" id="bunpouList">
+                <!-- kore / sore / are -->
+                <li class="bunpou-item" data-keywords="kore sore are kata tunjuk benda ini itu">
+                    <strong>これ / それ / あれ</strong>
+                    <p>
+                        <b>Fungsi:</b><br />
+                        Kata tunjuk untuk menyatakan benda.
+                    </p>
+                    <p>
+                        <b>Contoh:</b><br />
+                        これは わたしの ほん です。<br />
+                        <i>Kore wa watashi no hon desu.</i><br />
+                        (Ini adalah buku saya.)
+                    </p>
+                </li>
+
+                <!-- kono / sono / ano -->
+                <li class="bunpou-item" data-keywords="kono sono ano kata tunjuk diikuti kata benda">
+                    <strong>この / その / あの</strong>
+                    <p>
+                        <b>Fungsi:</b><br />
+                        Kata tunjuk yang harus diikuti kata benda.
+                    </p>
+                    <p>
+                        <b>Contoh:</b><br />
+                        この ほん は おもしろい です。<br />
+                        <i>Kono hon wa omoshiroi desu.</i><br />
+                        (Buku ini menarik.)
+                    </p>
+                </li>
+
+                <!-- そうです -->
+                <li class="bunpou-item" data-keywords="soudesu benar ya betul pernyataan">
+                    <strong>そうです</strong>
+                    <p>
+                        <b>Fungsi:</b><br />
+                        Menyatakan bahwa sesuatu itu benar atau sesuai.
+                    </p>
+                    <p>
+                        <b>Contoh:</b><br />
+                        A: がくせい ですか？<br />
+                        B: はい、そうです。<br />
+                        (A: Apakah kamu pelajar? B: Ya, benar.)
+                    </p>
+                </li>
+
+                <!-- か -->
+                <li class="bunpou-item" data-keywords="ka partikel tanya kalimat tanya">
+                    <strong>か</strong>
+                    <p>
+                        <b>Fungsi:</b><br />
+                        Partikel di akhir kalimat untuk membuat kalimat tanya.
+                    </p>
+                    <p>
+                        <b>Contoh:</b><br />
+                        あなた は がくせい ですか？<br />
+                        (Apakah kamu pelajar?)
+                    </p>
+                </li>
+
+                <!-- か 〜 か -->
+                <li class="bunpou-item" data-keywords="ka ka atau pilihan">
+                    <strong>〜か、〜か</strong>
+                    <p>
+                        <b>Fungsi:</b><br />
+                        Digunakan untuk menyatakan pilihan “A atau B”.
+                    </p>
+                    <p>
+                        <b>Contoh:</b><br />
+                        これは りんご ですか、なし ですか？<br />
+                        (Apakah ini apel atau pir?)
+                    </p>
+                </li>
+
+                <!-- KB1 の KB2 -->
+                <li class="bunpou-item" data-keywords="no kepemilikan hubungan antar kata benda">
+                    <strong>【Kata Benda 1】 の 【Kata Benda 2】</strong>
+                    <p>
+                        <b>Fungsi:</b><br />
+                        Menunjukkan kepemilikan atau hubungan.
+                    </p>
+                    <p>
+                        <b>Contoh:</b><br />
+                        わたし の せんせい<br />
+                        (Guru saya)
+                    </p>
+                </li>
+
+                <!-- の (no) -->
+                <li class="bunpou-item" data-keywords="no milik relasi">
+                    <strong>の</strong>
+                    <p>
+                        <b>Fungsi:</b><br />
+                        Partikel untuk menyatakan kepemilikan atau hubungan.
+                    </p>
+                    <p>
+                        <b>Contoh:</b><br />
+                        にほんご の ほん<br />
+                        (Buku bahasa Jepang)
+                    </p>
+                </li>
+
+                <!-- を (o) -->
+                <li class="bunpou-item" data-keywords="o partikel objek langsung">
+                    <strong>を</strong>
+                    <p>
+                        <b>Fungsi:</b><br />
+                        Partikel yang menandai objek langsung dari kata kerja.
+                    </p>
+                    <p>
+                        <b>Contoh:</b><br />
+                        パン を たべます。<br />
+                        (Saya makan roti.)
+                    </p>
+                </li>
+
+                <!-- そうですか -->
+                <li class="bunpou-item" data-keywords="soudesuka respon kaget perhatian">
+                    <strong>そうですか</strong>
+                    <p>
+                        <b>Fungsi:</b><br />
+                        Ungkapan untuk menunjukkan bahwa kita mengerti / respon terhadap
+                        informasi baru.
+                    </p>
+                    <p>
+                        <b>Contoh:</b><br />
+                        A: にほん へ いきます。<br />
+                        B: そうですか。<br />
+                        (A: Saya akan pergi ke Jepang. B: Oh, begitu ya.)
+                    </p>
+                </li>
+            </ul>
+
+            <li class="bunpou-item" data-keywords="kochira sochira achira kata tunjuk arah tempat orang sopan">
+                <strong>こちら / そちら / あちら</strong>
+                <p>
+                    <b>Fungsi:</b><br />
+                    Kata tunjuk sopan untuk arah, tempat, atau orang.
+                </p>
+                <p>
+                    <b>Penjelasan:</b><br />
+                    ・こちら (di sini / saya / pihak saya)<br />
+                    ・そちら (di situ / kamu / pihak kamu)<br />
+                    ・あちら (di sana / dia / pihak dia)
+                </p>
+                <p>
+                    <b>Contoh:</b><br />
+                    こちら は わたし の せんせい です。<br />
+                    <i>Kochira wa watashi no sensei desu.</i><br />
+                    (Ini adalah guru saya.)
+                </p>
+            </li>
+            <li class="bunpou-item" data-keywords="ima ji fun sekarang jam menit">
+                <strong>いま・〜じ・〜ふん／ぷん</strong>
+                <p><b>Fungsi:</b> Menyatakan waktu sekarang (jam dan menit).</p>
+                <p>
+                    <b>Contoh:</b><br />
+                    いま ５じ １０ぷん です。<br />
+                    <i>Ima go-ji juu-ppun desu.</i><br />
+                    (Sekarang jam 5 lewat 10 menit.)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="masu masen mashita masendeshita bentuk sopan kata kerja">
+                <strong>〜ます・〜ません・〜ました・〜ませんでした</strong>
+                <p>
+                    <b>Fungsi:</b> Bentuk sopan dari kata kerja:<br />
+                    ・〜ます (melakukan)<br />
+                    ・〜ません (tidak melakukan)<br />
+                    ・〜ました (sudah melakukan)<br />
+                    ・〜ませんでした (tidak melakukan di masa lalu)
+                </p>
+                <p>
+                    <b>Contoh:</b><br />
+                    たべます → makan<br />
+                    のみません → tidak minum<br />
+                    いきました → sudah pergi<br />
+                    ききませんでした → tidak mendengar
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="kata benda waktu ni kata kerja waktu tertentu ni">
+                <strong>（Kata benda waktu）に + （Kata kerja）</strong>
+                <p><b>Fungsi:</b> Menunjukkan waktu melakukan sesuatu.</p>
+                <p>
+                    <b>Contoh:</b><br />
+                    ６じ に おきます。<br />
+                    <i>Roku-ji ni okimasu.</i><br />
+                    (Bangun pada jam 6.)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="kb kara kb made dari sampai waktu tempat">
+                <strong>（Kata benda）から（Kata benda）まで</strong>
+                <p><b>Fungsi:</b> Menyatakan dari mana sampai mana (waktu/tempat).</p>
+                <p>
+                    <b>Contoh:</b><br />
+                    ９じ から ５じ まで はたらきます。<br />
+                    <i>Ku-ji kara go-ji made hatarakimasu.</i><br />
+                    (Bekerja dari jam 9 sampai jam 5.)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="kata benda to kata benda dan">
+                <strong>（Kata benda）と（Kata benda）</strong>
+                <p><b>Fungsi:</b> Menggabungkan dua kata benda (dan).</p>
+                <p>
+                    <b>Contoh:</b><br />
+                    パン と たまご を たべました。<br />
+                    <i>PAN to tamago o tabemashita.</i><br />
+                    (Makan roti dan telur.)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ne ya ya">
+                <strong>〜ね</strong>
+                <p>
+                    <b>Fungsi:</b> Digunakan untuk meminta persetujuan atau membuat
+                    kalimat terdengar ramah (ya, kan?).
+                </p>
+                <p>
+                    <b>Contoh:</b><br />
+                    いい てんき です ね。<br />
+                    <i>Ii tenki desu ne.</i><br />
+                    (Cuacanya bagus ya.)
+                </p>
+            </li>
+            <li class="bunpou-item" data-keywords="kb tempat e ikimasu kimasu kaerimasu pergi datang pulang ke tempat">
+                <strong>（Kata benda tempat）へ 行きます・来ます・帰ります</strong>
+                <p>
+                    <b>Fungsi:</b> Menyatakan pergi, datang, atau pulang ke suatu
+                    tempat.
+                </p>
+                <p>
+                    <b>Contoh:</b><br />
+                    がっこう へ 行きます。<br />
+                    <i>Gakkou e ikimasu.</i><br />
+                    (Pergi ke sekolah.)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="doko e mo ikimasen ikimasendeshita tidak pergi ke mana pun">
+                <strong>どこへも 行きません・行きませんでした</strong>
+                <p><b>Fungsi:</b> Menyatakan tidak pergi ke mana pun.</p>
+                <p>
+                    <b>Contoh:</b><br />
+                    どこへも 行きませんでした。<br />
+                    <i>Doko e mo ikimasen deshita.</i><br />
+                    (Tidak pergi ke mana pun.)
+                </p>
+            </li>
+
+            <li class="bunpou-item"
+                data-keywords="kb kendaraan de ikimasu kimasu kaerimasu dengan kendaraan pergi datang pulang">
+                <strong>（Kata benda kendaraan）で 行きます・来ます・帰ります</strong>
+                <p><b>Fungsi:</b> Menyatakan alat transportasi yang digunakan.</p>
+                <p>
+                    <b>Contoh:</b><br />
+                    でんしゃ で 学校 へ 行きます。<br />
+                    <i>Densha de gakkou e ikimasu.</i><br />
+                    (Pergi ke sekolah dengan kereta.)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="kb orang hewan to kk bersama dengan">
+                <strong>（Kata benda orang/hewan）と + （Kata kerja）</strong>
+                <p>
+                    <b>Fungsi:</b> Menyatakan melakukan sesuatu bersama orang atau
+                    hewan.
+                </p>
+                <p>
+                    <b>Contoh:</b><br />
+                    ともだち と あそびます。<br />
+                    <i>Tomodachi to asobimasu.</i><br />
+                    (Bermain dengan teman.)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="itsu kapan">
+                <strong>いつ</strong>
+                <p><b>Fungsi:</b> Kata tanya "kapan".</p>
+                <p>
+                    <b>Contoh:</b><br />
+                    いつ 行きますか。<br />
+                    <i>Itsu ikimasu ka?</i><br />
+                    (Kapan kamu pergi?)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="yo penegasan">
+                <strong>〜よ</strong>
+                <p>
+                    <b>Fungsi:</b> Digunakan untuk memberikan informasi atau penegasan.
+                </p>
+                <p>
+                    <b>Contoh:</b><br />
+                    これは おいしい よ。<br />
+                    <i>Kore wa oishii yo.</i><br />
+                    (Ini enak, lho.)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="sou desu ne menyetujui sambil berpikir">
+                <strong>そうですね</strong>
+                <p>
+                    <b>Fungsi:</b> Ungkapan untuk menyetujui sambil berpikir atau
+                    mempertimbangkan.
+                </p>
+                <p>
+                    <b>Contoh:</b><br />
+                    そうですね、行きましょう。<br />
+                    <i>Soudesune, ikimashou.</i><br />
+                    (Ya, mari kita pergi.)
+                </p>
+            </li>
+
+
+            <li class="bunpou-item" data-keywords="kb wo kk kata kerja transitif objek langsung">
+                <strong>（Kata benda）を + （Kata kerja transitif）</strong>
+                <p>
+                    <b>Fungsi:</b> Menyatakan objek langsung dari kata kerja.
+                </p>
+                <p>
+                    <b>Contoh:</b><br>
+                    パン を たべます。<br>
+                    <i>Pan o tabemasu.</i><br>
+                    (Makan roti.)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="kb wo shimasu melakukan sesuatu">
+                <strong>（Kata benda）を します</strong>
+                <p>
+                    <b>Fungsi:</b> Menyatakan melakukan suatu aktivitas (yang berasal dari kata benda).
+                </p>
+                <p>
+                    <b>Contoh:</b><br>
+                    サッカー を します。<br>
+                    <i>Sakkā o shimasu.</i><br>
+                    (Bermain sepak bola.)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="nani wo shimasu apa yang dilakukan">
+                <strong>なに を しますか</strong>
+                <p>
+                    <b>Fungsi:</b> Bertanya "apa yang dilakukan?"
+                </p>
+                <p>
+                    <b>Contoh:</b><br>
+                    きょう なに を しますか。<br>
+                    <i>Kyou nani o shimasu ka?</i><br>
+                    (Hari ini kamu mau melakukan apa?)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="nan dan nani bentuk apa">
+                <strong>なん・なに</strong>
+                <p>
+                    <b>Fungsi:</b> Keduanya berarti "apa", tetapi digunakan sesuai aturan:
+                <ul>
+                    <li><b>なに</b> digunakan sebelum kata kerja → なに を しますか</li>
+                    <li><b>なん</b> digunakan sebelum kata tertentu (misalnya なんじ, なんにん)</li>
+                </ul>
+                </p>
+                <p>
+                    <b>Contoh:</b><br>
+                    なんじ ですか。<br>
+                    <i>Nanji desu ka?</i><br>
+                    (Jam berapa?)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="kb tempat de kk aktivitas di tempat">
+                <strong>（Kata benda tempat）で + （Kata kerja）</strong>
+                <p>
+                    <b>Fungsi:</b> Menyatakan tempat berlangsungnya aktivitas.
+                </p>
+                <p>
+                    <b>Contoh:</b><br>
+                    としょかん で べんきょう します。<br>
+                    <i>Toshokan de benkyou shimasu.</i><br>
+                    (Belajar di perpustakaan.)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="kk masenka ajakan halus">
+                <strong>（Kata kerja -masu）ませんか</strong>
+                <p>
+                    <b>Fungsi:</b> Bentuk ajakan secara halus.
+                </p>
+                <p>
+                    <b>Contoh:</b><br>
+                    いっしょに たべませんか。<br>
+                    <i>Issho ni tabemasen ka?</i><br>
+                    (Mau makan bareng?)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="kk mashouka menawarkan bantuan atau saran">
+                <strong>（Kata kerja -masu）ましょうか</strong>
+                <p>
+                    <b>Fungsi:</b> Menawarkan bantuan atau membuat saran.
+                </p>
+                <p>
+                    <b>Contoh:</b><br>
+                    てつだいましょうか。<br>
+                    <i>Tetsudaimashou ka?</i><br>
+                    (Mau saya bantu?)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ka partikel ka pertanyaan">
+                <strong>〜か</strong>
+                <p>
+                    <b>Fungsi:</b> Digunakan di akhir kalimat untuk membuat pertanyaan.
+                </p>
+                <p>
+                    <b>Contoh:</b><br>
+                    あなたは がくせい ですか。<br>
+                    <i>Anata wa gakusei desu ka?</i><br>
+                    (Apakah kamu pelajar?)
+                </p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ru tame ni demi untuk tujuan">
+                <strong>（Kata kerja bentuk る）+ ために</strong>
+                <p><b>Fungsi:</b> Untuk tujuan / demi</p>
+                <p><b>Contoh:</b> にほんごを べんきょうする ために、ほんを よみます。</p>
+                <p><i>Untuk belajar bahasa Jepang, saya membaca buku.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ru tokoro desu baru akan">
+                <strong>（Kata kerja bentuk る）+ ところです</strong>
+                <p><b>Fungsi:</b> Baru akan melakukan sesuatu</p>
+                <p><b>Contoh:</b> これから しゅっぱつする ところです。</p>
+                <p><i>Saya baru akan berangkat sekarang.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ru tabi ni setiap kali">
+                <strong>（Kata kerja bentuk る）+ たびに</strong>
+                <p><b>Fungsi:</b> Setiap kali melakukan sesuatu</p>
+                <p><b>Contoh:</b> かのじょは でんわする たびに、ないていました。</p>
+                <p><i>Dia menangis setiap kali menelepon.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ru tsumori desu bermaksud">
+                <strong>（Kata kerja bentuk る）+ つもりです</strong>
+                <p><b>Fungsi:</b> Berniat / bermaksud untuk</p>
+                <p><b>Contoh:</b> あした いく つもりです。</p>
+                <p><i>Saya berniat pergi besok.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ru mae ni sebelum melakukan sesuatu">
+                <strong>（Kata kerja bentuk る）+ まえに</strong>
+                <p><b>Fungsi:</b> Sebelum melakukan sesuatu</p>
+                <p><b>Contoh:</b> ねる まえに はを みがきます。</p>
+                <p><i>Menyikat gigi sebelum tidur.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ru yotei desu berencana untuk">
+                <strong>（Kata kerja bentuk る）+ よていです</strong>
+                <p><b>Fungsi:</b> Berencana untuk</p>
+                <p><b>Contoh:</b> らいねん にほんへ いく よていです。</p>
+                <p><i>Berencana pergi ke Jepang tahun depan.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ru to ba apabila">
+                <strong>（Kata kerja bentuk る）+ と／ば</strong>
+                <p><b>Fungsi:</b> Jika / apabila</p>
+                <p><b>Contoh:</b> ふゆに なると、ゆきが ふります。</p>
+                <p><i>Jika masuk musim dingin, turun salju.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ru hazu desu seharusnya">
+                <strong>（Kata kerja bentuk る）+ はずです</strong>
+                <p><b>Fungsi:</b> Seharusnya / semestinya</p>
+                <p><b>Contoh:</b> かれは もう ついた はずです。</p>
+                <p><i>Dia seharusnya sudah tiba.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ru sou desu katanya">
+                <strong>（Kata kerja bentuk る）+ そうです</strong>
+                <p><b>Fungsi:</b> Katanya (laporan informasi dari orang lain)</p>
+                <p><b>Contoh:</b> あめが ふる そうです。</p>
+                <p><i>Katanya akan hujan.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ru you desu kelihatan seperti">
+                <strong>（Kata kerja bentuk る）+ ようです</strong>
+                <p><b>Fungsi:</b> Tampaknya / kelihatannya</p>
+                <p><b>Contoh:</b> かれは びょうき の ようです。</p>
+                <p><i>Keliatannya dia sakit.</i></p>
+            </li>
+            <li class="bunpou-item" data-keywords="ta koto ga arimasu pernah pengalaman">
+                <strong>（Kata kerja bentuk た）+ ことがあります</strong>
+                <p><b>Fungsi:</b> Menyatakan pernah mengalami</p>
+                <p><b>Contoh:</b> にほんへ いった ことがあります。</p>
+                <p><i>Pernah pergi ke Jepang.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta hou ga ii desu sebaiknya">
+                <strong>（Kata kerja bentuk た）+ ほうがいいです</strong>
+                <p><b>Fungsi:</b> Sebaiknya (nasihat)</p>
+                <p><b>Contoh:</b> もっと やすんだ ほうがいいです。</p>
+                <p><i>Sebaiknya kamu lebih banyak istirahat.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta bakari baru saja">
+                <strong>（Kata kerja bentuk た）+ ばかり</strong>
+                <p><b>Fungsi:</b> Baru saja selesai</p>
+                <p><b>Contoh:</b> いえに かえった ばかりです。</p>
+                <p><i>Baru saja pulang ke rumah.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta ato de setelah">
+                <strong>（Kata kerja bentuk た）+ あとで</strong>
+                <p><b>Fungsi:</b> Setelah melakukan</p>
+                <p><b>Contoh:</b> ごはんを たべた あとで、さんぽ します。</p>
+                <p><i>Setelah makan, saya jalan-jalan.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta ra kalau">
+                <strong>（Kata kerja bentuk た）+ ら</strong>
+                <p><b>Fungsi:</b> Kalau / jika</p>
+                <p><b>Contoh:</b> じかんが あったら、いきましょう。</p>
+                <p><i>Kalau ada waktu, ayo pergi.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta tokoro desu baru saja">
+                <strong>（Kata kerja bentuk た）+ ところです</strong>
+                <p><b>Fungsi:</b> Baru saja dilakukan</p>
+                <p><b>Contoh:</b> いま かえった ところです。</p>
+                <p><i>Saya baru saja pulang sekarang.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta ra ii desu sebaiknya">
+                <strong>（Kata kerja bentuk た）+ らいいです</strong>
+                <p><b>Fungsi:</b> Akan lebih baik jika</p>
+                <p><b>Contoh:</b> くすりを のんだらいいです。</p>
+                <p><i>Akan lebih baik jika kamu minum obat.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta baai wa apabila">
+                <strong>（Kata kerja bentuk た）+ ばあい（は）</strong>
+                <p><b>Fungsi:</b> Apabila / dalam kasus</p>
+                <p><b>Contoh:</b> じこが おきた ばあいは、110に れんらくします。</p>
+                <p><i>Apabila terjadi kecelakaan, hubungi 110.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta toori ni sesuai dengan">
+                <strong>（Kata kerja bentuk た）+ とおりに</strong>
+                <p><b>Fungsi:</b> Sesuai dengan apa yang dilakukan</p>
+                <p><b>Contoh:</b> わたしが いった とおりに、してください。</p>
+                <p><i>Lakukan sesuai dengan yang saya katakan.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta ri ta ri shimasu dan">
+                <strong>（Kata kerja bentuk た）+ り、たりします</strong>
+                <p><b>Fungsi:</b> Menyebutkan beberapa contoh aktivitas</p>
+                <p><b>Contoh:</b> おんがくを きいたり、ほんを よんだりします。</p>
+                <p><i>Dengarkan musik, baca buku, dan sebagainya.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta noni padahal sudah">
+                <strong>（Kata kerja bentuk た）+ のに</strong>
+                <p><b>Fungsi:</b> Padahal sudah / meskipun</p>
+                <p><b>Contoh:</b> しゅくだいを した のに、おこられました。</p>
+                <p><i>Padahal sudah mengerjakan PR, tetap dimarahi.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta to shitara kalau seandainya">
+                <strong>（Kata kerja bentuk た）+ としたら</strong>
+                <p><b>Fungsi:</b> Seandainya / jika</p>
+                <p><b>Contoh:</b> にほんへ いった としたら、なにを しますか。</p>
+                <p><i>Kalau kamu pergi ke Jepang, apa yang akan kamu lakukan?</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta nonimo kazu bahkan saja">
+                <strong>（Kata kerja bentuk た）+ のみならず</strong>
+                <p><b>Fungsi:</b> Tidak hanya... bahkan juga...</p>
+                <p><b>Contoh:</b> かれは にほんご だけでなく、ちゅうごくご も はなせます。</p>
+                <p><i>Dia bisa bicara tidak hanya bahasa Jepang, tapi juga Mandarin.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta kaimo naku tanpa hasil">
+                <strong>（Kata kerja bentuk た）+ かいもなく</strong>
+                <p><b>Fungsi:</b> Sudah melakukan, tapi tidak ada hasilnya</p>
+                <p><b>Contoh:</b> べんきょうした かいもなく、しけんに おちました。</p>
+                <p><i>Sudah belajar, tapi tetap gagal ujian.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta ue de setelah">
+                <strong>（Kata kerja bentuk た）+ うえで</strong>
+                <p><b>Fungsi:</b> Setelah menyelesaikan A, lanjut B</p>
+                <p><b>Contoh:</b> かくにんした うえで、れんらく します。</p>
+                <p><i>Setelah dikonfirmasi, saya akan menghubungi.</i></p>
+            </li>
+            <li class="bunpou-item" data-keywords="ta koto ga arimasu pernah pengalaman">
+                <strong>（Kata kerja bentuk た）+ ことがあります</strong>
+                <p><b>Fungsi:</b> Menyatakan pernah mengalami</p>
+                <p><b>Contoh:</b> にほんへ いった ことがあります。</p>
+                <p><i>Pernah pergi ke Jepang.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta hou ga ii desu sebaiknya">
+                <strong>（Kata kerja bentuk た）+ ほうがいいです</strong>
+                <p><b>Fungsi:</b> Sebaiknya (nasihat)</p>
+                <p><b>Contoh:</b> もっと やすんだ ほうがいいです。</p>
+                <p><i>Sebaiknya kamu lebih banyak istirahat.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta bakari baru saja">
+                <strong>（Kata kerja bentuk た）+ ばかり</strong>
+                <p><b>Fungsi:</b> Baru saja selesai</p>
+                <p><b>Contoh:</b> いえに かえった ばかりです。</p>
+                <p><i>Baru saja pulang ke rumah.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta ato de setelah">
+                <strong>（Kata kerja bentuk た）+ あとで</strong>
+                <p><b>Fungsi:</b> Setelah melakukan</p>
+                <p><b>Contoh:</b> ごはんを たべた あとで、さんぽ します。</p>
+                <p><i>Setelah makan, saya jalan-jalan.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta ra kalau">
+                <strong>（Kata kerja bentuk た）+ ら</strong>
+                <p><b>Fungsi:</b> Kalau / jika</p>
+                <p><b>Contoh:</b> じかんが あったら、いきましょう。</p>
+                <p><i>Kalau ada waktu, ayo pergi.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta tokoro desu baru saja">
+                <strong>（Kata kerja bentuk た）+ ところです</strong>
+                <p><b>Fungsi:</b> Baru saja dilakukan</p>
+                <p><b>Contoh:</b> いま かえった ところです。</p>
+                <p><i>Saya baru saja pulang sekarang.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta ra ii desu sebaiknya">
+                <strong>（Kata kerja bentuk た）+ らいいです</strong>
+                <p><b>Fungsi:</b> Akan lebih baik jika</p>
+                <p><b>Contoh:</b> くすりを のんだらいいです。</p>
+                <p><i>Akan lebih baik jika kamu minum obat.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta baai wa apabila">
+                <strong>（Kata kerja bentuk た）+ ばあい（は）</strong>
+                <p><b>Fungsi:</b> Apabila / dalam kasus</p>
+                <p><b>Contoh:</b> じこが おきた ばあいは、110に れんらくします。</p>
+                <p><i>Apabila terjadi kecelakaan, hubungi 110.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta toori ni sesuai dengan">
+                <strong>（Kata kerja bentuk た）+ とおりに</strong>
+                <p><b>Fungsi:</b> Sesuai dengan apa yang dilakukan</p>
+                <p><b>Contoh:</b> わたしが いった とおりに、してください。</p>
+                <p><i>Lakukan sesuai dengan yang saya katakan.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta ri ta ri shimasu dan">
+                <strong>（Kata kerja bentuk た）+ り、たりします</strong>
+                <p><b>Fungsi:</b> Menyebutkan beberapa contoh aktivitas</p>
+                <p><b>Contoh:</b> おんがくを きいたり、ほんを よんだりします。</p>
+                <p><i>Dengarkan musik, baca buku, dan sebagainya.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta noni padahal sudah">
+                <strong>（Kata kerja bentuk た）+ のに</strong>
+                <p><b>Fungsi:</b> Padahal sudah / meskipun</p>
+                <p><b>Contoh:</b> しゅくだいを した のに、おこられました。</p>
+                <p><i>Padahal sudah mengerjakan PR, tetap dimarahi.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta to shitara kalau seandainya">
+                <strong>（Kata kerja bentuk た）+ としたら</strong>
+                <p><b>Fungsi:</b> Seandainya / jika</p>
+                <p><b>Contoh:</b> にほんへ いった としたら、なにを しますか。</p>
+                <p><i>Kalau kamu pergi ke Jepang, apa yang akan kamu lakukan?</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta nonimo kazu bahkan saja">
+                <strong>（Kata kerja bentuk た）+ のみならず</strong>
+                <p><b>Fungsi:</b> Tidak hanya... bahkan juga...</p>
+                <p><b>Contoh:</b> かれは にほんご だけでなく、ちゅうごくご も はなせます。</p>
+                <p><i>Dia bisa bicara tidak hanya bahasa Jepang, tapi juga Mandarin.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta kaimo naku tanpa hasil">
+                <strong>（Kata kerja bentuk た）+ かいもなく</strong>
+                <p><b>Fungsi:</b> Sudah melakukan, tapi tidak ada hasilnya</p>
+                <p><b>Contoh:</b> べんきょうした かいもなく、しけんに おちました。</p>
+                <p><i>Sudah belajar, tapi tetap gagal ujian.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="ta ue de setelah">
+                <strong>（Kata kerja bentuk た）+ うえで</strong>
+                <p><b>Fungsi:</b> Setelah menyelesaikan A, lanjut B</p>
+                <p><b>Contoh:</b> かくにんした うえで、れんらく します。</p>
+                <p><i>Setelah dikonfirmasi, saya akan menghubungi.</i></p>
+            </li>
+            <li class="bunpou-item" data-keywords="nai to ikemasen harus">
+                <strong>（Kata kerja bentukない）+ といけません</strong>
+                <p><b>Fungsi:</b> Harus (melakukan sesuatu)</p>
+                <p><b>Contoh:</b> べんきょうしないといけません。</p>
+                <p><i>Harus belajar.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="nakereba naranai harus">
+                <strong>（Kata kerja bentukない）+ なければならない</strong>
+                <p><b>Fungsi:</b> Harus (melakukan sesuatu)</p>
+                <p><b>Contoh:</b> しゅくだいを しない なければなりません。</p>
+                <p><i>Harus mengerjakan PR.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="nakya harus, jika tidak">
+                <strong>（Kata kerja bentukない）+ なきゃ</strong>
+                <p><b>Fungsi:</b> Harus (bentuk informal); jika tidak...</p>
+                <p><b>Contoh:</b> はやく いかなきゃ。</p>
+                <p><i>Harus cepat pergi.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="nai de hoshii tidak ingin">
+                <strong>（Kata kerja bentukない）+ でほしい</strong>
+                <p><b>Fungsi:</b> Tidak ingin seseorang melakukan sesuatu</p>
+                <p><b>Contoh:</b> さわがないでほしい。</p>
+                <p><i>Tidak ingin ribut.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="nai de kudasai tolong jangan">
+                <strong>（Kata kerja bentukない）+ でください</strong>
+                <p><b>Fungsi:</b> Tolong jangan (melakukan sesuatu)</p>
+                <p><b>Contoh:</b> たべないでください。</p>
+                <p><i>Tolong jangan makan.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="nakute mo ii tidak usah">
+                <strong>（Kata kerja bentukなくて）+ もいいです</strong>
+                <p><b>Fungsi:</b> Tidak perlu (melakukan sesuatu)</p>
+                <p><b>Contoh:</b> こなくてもいいです。</p>
+                <p><i>Tidak usah datang.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="nai hou ga ii lebih baik tidak">
+                <strong>（Kata kerja bentukない）+ ほうがいい</strong>
+                <p><b>Fungsi:</b> Lebih baik tidak (melakukan sesuatu)</p>
+                <p><b>Contoh:</b> いわないほうがいい。</p>
+                <p><i>Lebih baik tidak bilang.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="naku narimasu menjadi tidak bisa">
+                <strong>（Kata kerja bentukなく）+ なります</strong>
+                <p><b>Fungsi:</b> Menjadi tidak bisa...</p>
+                <p><b>Contoh:</b> はしれなくなります。</p>
+                <p><i>Menjadi tidak bisa lari.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="nai de tanpa">
+                <strong>（Kata kerja bentukない）+ で</strong>
+                <p><b>Fungsi:</b> Tanpa melakukan sesuatu</p>
+                <p><b>Contoh:</b> いわないで、いきました。</p>
+                <p><i>Dia pergi tanpa bilang.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="nai mama dalam keadaan tidak">
+                <strong>（Kata kerja bentukない）+ まま</strong>
+                <p><b>Fungsi:</b> Dalam keadaan tidak melakukan sesuatu</p>
+                <p><b>Contoh:</b> なにもたべないまま、ねました。</p>
+                <p><i>Tidur dalam keadaan belum makan.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="nai sou desu katanya tidak">
+                <strong>（Kata kerja bentukない）+ そうです</strong>
+                <p><b>Fungsi:</b> Katanya tidak akan melakukan sesuatu</p>
+                <p><b>Contoh:</b> かれは こないそうです。</p>
+                <p><i>Katanya dia tidak datang.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="nai mitai seperti tidak">
+                <strong>（Kata kerja bentukない）+ みたい</strong>
+                <p><b>Fungsi:</b> Sepertinya tidak (melakukan sesuatu)</p>
+                <p><b>Contoh:</b> あめがふらないみたい。</p>
+                <p><i>Sepertinya tidak hujan.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="nai rashii katanya tidak">
+                <strong>（Kata kerja bentukない）+ らしい</strong>
+                <p><b>Fungsi:</b> Katanya tidak (melakukan sesuatu)</p>
+                <p><b>Contoh:</b> たべないらしい。</p>
+                <p><i>Katanya tidak makan.</i></p>
+            </li>
+            <li class="bunpou-item" data-keywords="te imasu sedang melakukan">
+                <strong>（Kata kerja bentukて）+ います</strong>
+                <p><b>Fungsi:</b> Menyatakan sedang melakukan sesuatu</p>
+                <p><b>Contoh:</b> いま たべています。</p>
+                <p><i>Saya sedang makan sekarang.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te okimasu menyiapkan duluan">
+                <strong>（Kata kerja bentukて）+ おきます</strong>
+                <p><b>Fungsi:</b> Melakukan sesuatu terlebih dahulu untuk persiapan</p>
+                <p><b>Contoh:</b> でんきをけしておきます。</p>
+                <p><i>Saya matikan lampunya dulu.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te tamaranai sangat sekali">
+                <strong>（Kata kerja bentukて）+ たまらない</strong>
+                <p><b>Fungsi:</b> Tidak tertahankan, sangat sekali</p>
+                <p><b>Contoh:</b> おなかがすいてたまらない。</p>
+                <p><i>Lapar sekali sampai tidak tahan.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te arimasu sudah dilakukan">
+                <strong>（Kata kerja bentukて）+ あります</strong>
+                <p><b>Fungsi:</b> Menyatakan keadaan setelah suatu tindakan dilakukan (dengan sengaja)</p>
+                <p><b>Contoh:</b> ドアがしめてあります。</p>
+                <p><i>Pintu sudah ditutup.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te mimasu mencoba melakukan">
+                <strong>（Kata kerja bentukて）+ みます</strong>
+                <p><b>Fungsi:</b> Mencoba melakukan sesuatu</p>
+                <p><b>Contoh:</b> たべてみます。</p>
+                <p><i>Saya coba makan.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te agemasu memberi">
+                <strong>（Kata kerja bentukて）+ あげます</strong>
+                <p><b>Fungsi:</b> Memberi bantuan kepada orang lain</p>
+                <p><b>Contoh:</b> ともだちにおしえてあげました。</p>
+                <p><i>Saya mengajari teman saya.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te moraimasu menerima">
+                <strong>（Kata kerja bentukて）+ もらいます</strong>
+                <p><b>Fungsi:</b> Menerima bantuan dari orang lain</p>
+                <p><b>Contoh:</b> せんせいに なおしてもらいました。</p>
+                <p><i>Diperbaiki oleh guru.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te kuremasu menerima pribadi">
+                <strong>（Kata kerja bentukて）+ くれます</strong>
+                <p><b>Fungsi:</b> Orang lain melakukan sesuatu untuk saya</p>
+                <p><b>Contoh:</b> ははがつくってくれました。</p>
+                <p><i>Ibu membuatkan untuk saya.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te mo ii boleh">
+                <strong>（Kata kerja bentukて）+ もいいです</strong>
+                <p><b>Fungsi:</b> Boleh (melakukan sesuatu)</p>
+                <p><b>Contoh:</b> ここで たべてもいいですか。</p>
+                <p><i>Boleh makan di sini?</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te hoshii ingin">
+                <strong>（Kata kerja bentukて）+ ほしい</strong>
+                <p><b>Fungsi:</b> Ingin orang lain melakukan sesuatu</p>
+                <p><b>Contoh:</b> まってほしいです。</p>
+                <p><i>Saya ingin kamu menunggu.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te iru tokoro sedang">
+                <strong>（Kata kerja bentukて）+ いるところです</strong>
+                <p><b>Fungsi:</b> Sedang dalam proses melakukan</p>
+                <p><b>Contoh:</b> いま かいているところです。</p>
+                <p><i>Saya sedang menulis sekarang.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te te melakukan dan">
+                <strong>て、て、。。</strong>
+                <p><b>Fungsi:</b> Melakukan beberapa tindakan secara berurutan</p>
+                <p><b>Contoh:</b> おきて、かおをあらって、あさごはんをたべます。</p>
+                <p><i>Bangun, cuci muka, lalu makan pagi.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te kudasai tolong harap">
+                <strong>（Kata kerja bentukて）+ ください</strong>
+                <p><b>Fungsi:</b> Permintaan atau perintah sopan</p>
+                <p><b>Contoh:</b> まってください。</p>
+                <p><i>Tolong tunggu.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te wa ikemasen tidak boleh">
+                <strong>（Kata kerja bentukて）+ はいけません</strong>
+                <p><b>Fungsi:</b> Tidak boleh melakukan sesuatu</p>
+                <p><b>Contoh:</b> ここでたべてはいけません。</p>
+                <p><i>Tidak boleh makan di sini.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te kara setelah">
+                <strong>（Kata kerja bentukて）+ から</strong>
+                <p><b>Fungsi:</b> Setelah melakukan sesuatu</p>
+                <p><b>Contoh:</b> ごはんをたべてから、しゅくだいをします。</p>
+                <p><i>Setelah makan, saya mengerjakan PR.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te mo meskipun">
+                <strong>（Kata kerja bentukて）+ も</strong>
+                <p><b>Fungsi:</b> Meskipun/walaupun melakukan sesuatu</p>
+                <p><b>Contoh:</b> あめがふってもいきます。</p>
+                <p><i>Meski hujan pun, saya akan pergi.</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te itadakemasen ka minta izin">
+                <strong>（Kata kerja bentukて）+ いただけませんか</strong>
+                <p><b>Fungsi:</b> Permintaan yang sangat sopan</p>
+                <p><b>Contoh:</b> てつだっていただけませんか。</p>
+                <p><i>Bisakah Anda membantu saya?</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te shimau tidak sengaja">
+                <strong>（Kata kerja bentukて）+ しまいました</strong>
+                <p><b>Fungsi:</b> Melakukan sesuatu secara tidak sengaja / menyesal</p>
+                <p><b>Contoh:</b> わすれてしまいました。</p>
+                <p><i>Saya lupa (sayangnya).</i></p>
+            </li>
+
+            <li class="bunpou-item" data-keywords="te nai de KK dengan atau tanpa">
+                <strong>（Kata kerja bentukて / ないで）+ KK</strong>
+                <p><b>Fungsi:</b> Menyambungkan dua tindakan (dengan / tanpa melakukan sesuatu)</p>
+                <p><b>Contoh:</b> あさごはんをたべないで、でかけました。</p>
+                <p><i>Saya pergi tanpa sarapan.</i></p>
+            </li>
+
+
+
+        </ul>
+    </div>
+
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById("navLinks");
+            nav.classList.toggle("show");
+        }
+
+        function searchBunpou() {
+            const input = document
+                .getElementById("searchInput")
+                .value.toLowerCase();
+            const items = document.querySelectorAll(".bunpou-item");
+
+            items.forEach((item) => {
+                const visibleText = item.textContent.toLowerCase();
+                const keywords = item.getAttribute("data-keywords") || "";
+                const combinedText = visibleText + " " + keywords.toLowerCase();
+
+                item.style.display = combinedText.includes(input) ? "" : "none";
+            });
+        }
+    </script>
+</body>
+
+</html>
